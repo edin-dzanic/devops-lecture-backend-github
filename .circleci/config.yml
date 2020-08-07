@@ -1,3 +1,5 @@
+version: 2.1
+
 orbs:
 win: circleci/windows@2.2.0
 
@@ -27,7 +29,6 @@ jobs:
           command: echo "Building Docker image"
 
 workflows:
-  version: 2.1
   build_and_deploy:
     jobs:
       - build
