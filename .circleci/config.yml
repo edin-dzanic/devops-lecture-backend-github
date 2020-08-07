@@ -1,34 +1,35 @@
- version: 2.1
+version: 2.1
 
- orbs:
-  win: circleci/windows@2.2.0
+orbs:
+win: circleci/windows@2.2.0
 
- jobs:
-   build:
-     executor: win/default     
-    
-     steps:
-       - checkout
-       - run:
-          name: Restore
-          command: dotnet restore
-       - run:
-          name: Build 
-          command: dotnet build
-       - run: 
-          name: Test
-          command: dotnet test
+jobs:
+  build:
+    executor: win/default     
+  
+    steps:
+      - checkout
+      - run:
+        name: Restore
+        command: dotnet restore
+      - run:
+        name: Build 
+        command: dotnet build
+      - run: 
+        name: Test
+        command: dotnet test
 
-   deploy:
-      executor: win/default
+  deploy:
+    executor: win/default
 
-      steps:
-       - checkout
-       - run:
-          name: Build Docker Image
-          command: echo "Building Docker image"
+    steps:
+      - checkout
+      - run:
+        name: Build Docker Image
+        command: echo "Building Docker image"
+
 workflows:
-  build-and-deploy:
+  build_and_deploy:
     jobs:
       - build
       - deploy
