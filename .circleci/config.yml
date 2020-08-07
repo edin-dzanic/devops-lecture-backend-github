@@ -20,14 +20,13 @@
           command: dotnet test
 
    deploy:
-    executor: win/default
+      executor: win/default
 
-    steps:
+      steps:
        - checkout
        - run:
           name: Build Docker Image
           command: echo "Building Docker image"
-
 workflows:
   build-and-deploy:
     jobs:
