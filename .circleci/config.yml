@@ -9,12 +9,12 @@
     
      steps:
        - checkout
-       - run: dotnet build
-
-   test:
-      executor: win/default
-
-      steps:
-       - checkout
-       - run: dotnet test
-
+       - run:
+          name: Restore
+          command: dotnet restore
+       - run:
+          name: Build 
+          command: dotnet build
+       - run: 
+          name: Test
+          command: dotnet test
