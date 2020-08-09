@@ -27,6 +27,7 @@ jobs:
 
     steps:
       - checkout
+      - azure-cli/install
       - azure-acr/build-and-push-image:
           login-server-name: regrubdevopsshowcase.azurecr.io
           registry-name: regrubdevopsshowcase
