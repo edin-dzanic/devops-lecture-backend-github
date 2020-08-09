@@ -18,7 +18,7 @@ jobs:
           command: dotnet build
       - run: 
           name: Test
-          command: dotnet test --no-build --logger "trx"
+          command: dotnet test --no-build --logger "trx;verbosity=normal"
       - run:
           name: Publish test results
           when: always
