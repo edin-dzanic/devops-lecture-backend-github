@@ -24,7 +24,10 @@ jobs:
           when: always
           command: |
             dotnet tool install -g trx2junit
+            cat << \EOF >> ~/.bash_profile
+            # Add .NET Core SDK tools
             export PATH="$PATH:/root/.dotnet/tools"
+            EOF
             trx2junit tests/**/TestResults/*.trx
       - store_test_results:
           path: tests/TestResults
