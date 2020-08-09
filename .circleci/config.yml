@@ -21,7 +21,8 @@ jobs:
           command: dotnet test
 
   deploy:
-    executor: win/default
+    machine: # executor type
+      image: ubuntu-1604:201903-01 
 
     steps:
       - checkout
