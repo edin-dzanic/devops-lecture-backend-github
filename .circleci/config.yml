@@ -18,7 +18,9 @@ jobs:
           command: dotnet build
       - run: 
           name: Test
-          command: dotnet test
+          command: dotnet test -v n --results-directory:test_coverage --collect:"Code Coverage"
+      - store_test_results:
+          path: C:\Users\circleci\project\test_coverage
 
   deploy:
     machine: # executor type
