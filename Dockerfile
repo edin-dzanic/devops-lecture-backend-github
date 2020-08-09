@@ -8,7 +8,7 @@ COPY . .
 
 # Restore dependencies and publish/build the WebAPI project to the /app directoy
 RUN dotnet restore
-RUN dotnet publish src/WebAPI/WebAPI.csproj --configuration Release --output /app
+RUN dotnet publish src/DevopsLectureBackend.csproj --configuration Release --output /app
 
 # Run the app using the official microsoft ASP.NET Core Runtime image
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS final
