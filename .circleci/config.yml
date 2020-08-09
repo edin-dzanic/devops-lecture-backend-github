@@ -30,9 +30,9 @@ jobs:
           name: Build Docker Image
           command: echo "Building Docker image"
       - azure-acr/build-and-push-image:
-          azure-sp: $AZURE_SP
-          azure-sp-password: $AZURE_SP_PASSWORD
-          azure-sp-tenant: $AZURE_SP_TENANT
+          azure-sp: AZURE_SP
+          azure-sp-password: AZURE_SP_PASSWORD
+          azure-sp-tenant: AZURE_SP_TENANT
           login-server-name: regrubdevopsshowcase.azurecr.io
           registry-name: regrubdevopsshowcase
           repo: rub-devops-showcase
