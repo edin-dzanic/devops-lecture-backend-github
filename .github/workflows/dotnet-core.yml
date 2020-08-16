@@ -40,3 +40,9 @@ jobs:
         repository: github
         image: github
         tag: latest
+    
+    - name: 'Deploy to Azure Web App for Container'
+      uses: azure/webapps-deploy@v2
+      with: 
+        app-name: app-rub-devops-showcase
+        images: ${{ secrets.registry }}/github/github:latest
