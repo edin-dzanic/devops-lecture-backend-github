@@ -38,4 +38,5 @@ jobs:
         tenant: ${{ secrets.tenant }}
         registry: ${{ secrets.registry }}
         repository: github
+        image: github
         tag: latest
