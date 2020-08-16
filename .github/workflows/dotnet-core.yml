@@ -23,3 +23,19 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+  
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+  
+    steps:
+    - name: ACR build and push
+      id: acr
+      uses: ams0/acr-task-github-action@v1
+      with:
+        service_principal: ${{ secrets.service_principal }}
+        service_principal_password: ${{ secrets.service_principal_password }}
+        tenant: ${{ secrets.tenant }}
+        registry: ${{ secrets.registry }}
+        repository: github
+        tag: latest
