@@ -50,4 +50,4 @@ jobs:
       uses: azure/webapps-deploy@v2
       with: 
         app-name: app-rub-devops-showcase
-        images: ${{ secrets.registry }}/github/github:latest
+        images: ${{ secrets.registry }}/github:latest
