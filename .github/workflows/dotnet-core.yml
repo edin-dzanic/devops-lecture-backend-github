@@ -41,7 +41,7 @@ jobs:
         service_principal: ${{ secrets.service_principal }}
         service_principal_password: ${{ secrets.service_principal_password }}
         tenant: ${{ secrets.tenant }}
-        registry: ${{ secrets.registry }}
+        registry: regrubdevopsshowcase
         repository: github
         image: github
         tag: latest
@@ -50,4 +50,4 @@ jobs:
       uses: azure/webapps-deploy@v2
       with: 
         app-name: app-rub-devops-showcase
-        images: ${{ secrets.registry }}.azurecr.io/github/github:latest
+        images: regrubdevopsshowcase.azurecr.io/github/github:latest
